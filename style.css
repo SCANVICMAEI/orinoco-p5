@@ -3,6 +3,7 @@
 .boutton, .appareil-description {
   color: white;
   margin-bottom: 1rem;
+ 
 }
 
 .boutton:hover {
@@ -211,7 +212,9 @@ table {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: auto;
+  margin-right: 5px;
+  margin-left: 5px;
+ text-align: center;
 }
 .appareil img {
   object-fit: cover;
