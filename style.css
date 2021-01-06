@@ -1,7 +1,8 @@
 /*css commun*/
 
-.boutton {
+.boutton, .appareil-description {
   color: white;
+  margin-bottom: 1rem;
 }
 
 .boutton:hover {
