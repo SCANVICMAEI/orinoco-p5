@@ -90,7 +90,7 @@ section {
 }
 
 article {
-  height: 25rem;
+  height: 29rem;
   width: 20rem;
   background-color: dimgray;
   display: flex;
@@ -100,6 +100,8 @@ article {
 }
 article a {
   text-align: center;
+ margin-bottom: 1rem;
+ 
 }
 
 a:hover {
@@ -111,6 +113,7 @@ a:hover {
   border-top-right-radius: 10px;
   object-fit: cover;
   height: 75%;
+  margin-bottom: 0.5rem;
 }
 
 span {
@@ -119,6 +122,15 @@ span {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  margin-bottom: 0.5rem;
+ 
+}
+
+article p{
+  text-align: center;
+  margin-right: 0.2rem;
+  margin-left: 0.2rem;
+  margin-bottom: 0.5rem;
 }
 
 /*footer*/

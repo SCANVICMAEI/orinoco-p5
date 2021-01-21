@@ -1,3 +1,5 @@
 /node_modules
 /.idea
 package-lock.json
+# ignore BACK-END folder
+BACK-END/
