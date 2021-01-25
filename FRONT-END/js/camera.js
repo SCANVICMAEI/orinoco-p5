@@ -1,5 +1,5 @@
 
-class Cameras {
+class Camera {
     constructor(product) {
         this.name = product.name;
         this.imageUrl = product.imageUrl;

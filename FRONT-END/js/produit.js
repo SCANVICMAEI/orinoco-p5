@@ -10,91 +10,85 @@
    })
    .then(function (product) {
      console.log(product);
-     display(product);
+     let camera = new Camera(product)
+     display(camera);
    })
 
-
- function display(product) {
+ function display(camera) {
    container.innerHTML +=
      `<div class="appareil" id="cardsProduct">
-          <img src=${product.imageUrl} alt="" />
+          <img src=${camera.imageUrl} alt="" />
          <div class="description">
-           <p class="nom">${product.name}</p>
+           <p class="nom">${camera.name}</p>
            <span class="appareil-description">
-           ${product.description}
+           ${camera.description}
            </span>
            <select class="options" id ="option">
              <option>Choix options</option>
            </select>
-           <p class="prix"> Prix Unitaire: ${product.price/ 100}€</p>
+           <p class="prix"> Prix Unitaire: ${camera.price/ 100}€</p>
            <select class="quantite" id="quantite">           
              <option value="1">1</option>
              <option value="2">2</option>
              <option value="3">3</option>
-           </select>
-          
-          
+           </select>         
       <button type ="submit" id="panier" value="submit"> Ajouter au panier</button>
-
        </div>
        </div>`
- };
-
  /////////////////////////////////////////////////
-
+     
  /*boucle option lenses*/
-
- let lenses = product.lenses
-
- for (let lenses of product.lenses) {
-   document.getElementById('option').innerHTML +=
-     `<option value="">${product.lenses}</option>`
+       for (let lenses of camera.lenses) {
+         document.getElementById('option').innerHTML +=
+           `<option value="1">${lenses}</option>`
+       };
+ 
  };
 
 
  ////////////////////////////////////////////////
 
- /*evenement bouton ajouter panier*/
+// //  /*evenement bouton ajouter panier*/
 
- //  document.getElementById('panier').addEventListener('click',(panier)); 
+  // document.getElementById('panier').addEventListener('click',()); 
 
- ////////////////////////////////////////////////
-
-
- // function initCamera(){
- //   var camera = localStorage.getItem("camera");
- //   if (camera != null){
- //     return JSON.parse(camera);
- //   }else{
- //     return[];
- //   }
- // }
-
- //////////////////////////////////////////////
-
- /*ajouter produit dans tableau*/
-
- // function addToCamera(product){
- //   var camera = initCamera();
- //   camera.push(product);
- //   saveCamera(camera);
- // }
-
- //////////////////////////////////////////////
-
- /*supprimer produit dans tableau*/
-
- // function removeFromCamera(product){
-
- // }
-
- //////////////////////////////////////////////
-
- /*sauvegarder produit dans tableau*/
-
- // function saveCamera(camera){
- //   localStorage.setItem("camera", JSON.stringify(camera));
- // }
+// // //  ////////////////////////////////////////////////
 
 
- const tableauPanier = [];
+//  function initCamera(){
+//    var camera = localStorage.getItem("camera");
+//    if (camera != null){
+//      return JSON.parse(camera);
+//    }else{
+//      return[];
+//    }
+//  }
+
+// // //  //////////////////////////////////////////////
+
+//  /*ajouter produit dans tableau*/
+
+//  function addToCamera(product){
+//    var camera = initCamera();
+//    camera.push(product);
+//    saveCamera(camera);
+//  }
+
+// // //  //////////////////////////////////////////////
+
+//  /*supprimer produit dans tableau*/
+
+//  function removeFromCamera(product){
+
+//  }
+
+// // //  //////////////////////////////////////////////
+
+//  /*sauvegarder produit dans tableau*/
+
+//  function saveCamera(camera){
+//    localStorage.setItem("camera", JSON.stringify(camera));
+//  }
+
+
+//  const tableauPanier = [];
