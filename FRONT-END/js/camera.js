@@ -6,6 +6,8 @@ class Cameras {
         this.price = product.price;
         this.id = product._id;
         this.description = product.description;
+        this.lenses= product.lenses;
     }
+    
 }
 

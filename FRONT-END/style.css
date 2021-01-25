@@ -232,3 +232,11 @@ table {
   object-fit: cover;
   width: 50%;
 }
+select{
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.appareil-description, .nom{
+  margin-top: 0.5rem;
+}
