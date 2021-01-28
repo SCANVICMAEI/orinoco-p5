@@ -9,7 +9,6 @@
      return response.json()
    })
    .then(function (product) {
-     console.log(product);
      let camera = new Camera(product)
      display(camera);
    })
@@ -32,63 +31,45 @@
              <option value="2">2</option>
              <option value="3">3</option>
            </select>         
-      <button type ="submit" id="panier" value="submit"> Ajouter au panier</button>
+      <a href ="../pages/panier.html"><button type ="submit" id="panier" value="submit" > Ajouter au panier</button></a>
        </div>
        </div>`
- /////////////////////////////////////////////////
-     
- /*boucle option lenses*/
-       for (let lenses of camera.lenses) {
-         document.getElementById('option').innerHTML +=
-           `<option value="1">${lenses}</option>`
-       };
- 
- };
 
 
- ////////////////////////////////////////////////
+   // les option lentilles s'affcihe en fonction du produit
 
-// //  /*evenement bouton ajouter panier*/
+   for (let lenses of camera.lenses) {
+     document.getElementById('option').innerHTML +=
+       `<option value="1">${lenses}</option>`
 
-  // document.getElementById('panier').addEventListener('click',()); 
-
-// // //  ////////////////////////////////////////////////
-
-
-//  function initCamera(){
-//    var camera = localStorage.getItem("camera");
-//    if (camera != null){
-//      return JSON.parse(camera);
-//    }else{
-//      return[];
-//    }
-//  }
-
-// // //  //////////////////////////////////////////////
-
-//  /*ajouter produit dans tableau*/
-
-//  function addToCamera(product){
-//    var camera = initCamera();
-//    camera.push(product);
-//    saveCamera(camera);
-//  }
-
-// // //  //////////////////////////////////////////////
-
-//  /*supprimer produit dans tableau*/
-
-//  function removeFromCamera(product){
-
-//  }
-
-// // //  //////////////////////////////////////////////
-
-//  /*sauvegarder produit dans tableau*/
-
-//  function saveCamera(camera){
-//    localStorage.setItem("camera", JSON.stringify(camera));
-//  }
+// gerer quantité 
 
 
-//  const tableauPanier = [];
+
+     //  je cree un tableau vide panier pour stoker info 
+
+     let panier = [];
+
+     // je récupere l'élement de mon html  et écoute l'évenement au click
+
+     document.getElementById('panier').addEventListener('click', ajouterProduitAuPanier)
+
+
+     function ajouterProduitAuPanier() {
+       //je récupère mon panier
+       let panier = localStorage.getItem("panier")
+       // si mon panier est vide crée array camera 
+       if (panier === null) {
+         panier = [camera]
+         //sinon il existe deja 
+       } else {
+         panier = JSON.parse(panier)
+         //j'ajoute mes produits a camera 
+         panier.push(camera)
+       }
+       localStorage.setItem("panier", JSON.stringify(panier))
+     };
+
+     //accolade fermeture scoop
+   }};
+

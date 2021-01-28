@@ -1,4 +1,4 @@
-/*creation cards */
+/* cards */
 function display(camera) {
     container.innerHTML +=
        
@@ -21,8 +21,6 @@ fetch("http://localhost:3000/api/cameras") /* renvoie une promesse*/
     .then(function (response) {
         return response.json()
     })
-
-
     .then(function (listeProduct) {
 
         for (let product of listeProduct) {

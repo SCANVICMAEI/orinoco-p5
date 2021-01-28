@@ -1,13 +1,12 @@
 
 class Camera {
-    constructor(product) {
-        this.name = product.name;
-        this.imageUrl = product.imageUrl;
-        this.price = product.price;
-        this.id = product._id;
-        this.description = product.description;
-        this.lenses= product.lenses;
+    constructor({name,imageUrl,price,_id,description,lenses}){
+        this.name = name;
+        this.imageUrl =imageUrl;
+        this.price = price;
+        this.id = _id;
+        this.description = description;
+        this.lenses= lenses;
     }
     
 }
-

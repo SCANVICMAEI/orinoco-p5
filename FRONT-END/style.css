@@ -1,18 +1,19 @@
 /*css commun*/
 
-.boutton, .appareil-description {
+.boutton,
+.appareil-description {
   color: white;
   margin-bottom: 1rem;
- 
+
 }
 
 .boutton:hover {
   color: brown;
 }
 
-.zoom{
+.zoom {
   width: 320px;
-height: 240px;
+  height: 240px;
 }
 
 body {
@@ -42,7 +43,7 @@ nav a {
   border-radius: 10px;
 }
 
-i{
+i {
   margin-left: 2px;
 }
 
@@ -98,10 +99,11 @@ article {
   border-radius: 10px;
   margin-bottom: 5rem;
 }
+
 article a {
   text-align: center;
- margin-bottom: 1rem;
- 
+  margin-bottom: 1rem;
+
 }
 
 a:hover {
@@ -123,10 +125,10 @@ span {
   align-items: center;
   justify-content: space-around;
   margin-bottom: 0.5rem;
- 
+
 }
 
-article p{
+article p {
   text-align: center;
   margin-right: 0.2rem;
   margin-left: 0.2rem;
@@ -226,17 +228,27 @@ table {
   justify-content: center;
   margin-right: 5px;
   margin-left: 5px;
- text-align: center;
+  text-align: center;
 }
+
 .appareil img {
   object-fit: cover;
   width: 50%;
 }
-select{
+
+select {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
 
-.appareil-description, .nom{
+.appareil-description,
+.nom {
   margin-top: 0.5rem;
+}
+
+#panier:active {
+  background-color: grey;
+  color: black;
+font-weight:bold;
+
 }
