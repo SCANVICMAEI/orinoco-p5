@@ -16,13 +16,13 @@ function display(camera) {
 
 
 let container = document.getElementById("container");
-
-fetch("http://localhost:3000/api/cameras") /* renvoie une promesse*/
+//appelle api
+fetch("http://localhost:3000/api/cameras") 
     .then(function (response) {
         return response.json()
     })
     .then(function (listeProduct) {
-
+// prend 1 rpoduits de la liste produit
         for (let product of listeProduct) {
             let camera = new Camera(product)
 

@@ -1,41 +1,45 @@
-
-//je récupère l'emplacement ou je vais écrire mon html 
-
 let container = document.getElementById("container");
 
-//j'appelle mon api
-
-fetch("http://localhost:3000/api/cameras/") 
-.then(function (response) {
-  return response.json()
-})
-
 //je récupère les donner de mon panier que j'appele et je le traduit avec parse
+let cameras = JSON.parse(localStorage.getItem("panier")) ? JSON.parse(localStorage.getItem("panier")) : [];
 
-let monPanier = JSON.parse(localStorage.getItem("panier"));
+// je déclare en prix panier total a 0 €
+let prixPanier = 0
 
-
-console.log(monPanier);
-
-//condition : si mon panier et different de nul il me retourne mon panier 
-
-if (monPanier != null){
-   container.innerHTML +=
-  ` <table>
-   <tr>
-     <td><img src=${monPanier.imageUrl} alt="" /></td>
-
-     <td>${monPanier.name}</td>
-
-     <td>${monPanier.price/ 100}</td>
-
-     <td>prix ttc</td>
-
-     <td>
-       <a> <i class="fas fa-trash-alt"></i></a>
-     </td>
-   </tr>
- </table>
-`
+//boucle :je parcour les lignes du panier
+for (let i = 0; i < cameras.length; i++) {
+  //bloque produit
+  if (cameras != null) {
+    container.innerHTML +=
+          ` 
+    <tr>
+    <td><img src=${cameras[i].imageUrl} alt="" /></td>
+    <td>${cameras[i].name}</td>
+    <td>${cameras[i].price / 100} €</td>
+    <td>${cameras[i].quantity}</td>
+    <td><a> <i class="fas fa-trash-alt" id="deleteCamera"></i></a></td>
+    <td >${cameras[i].quantity * cameras[i].price / 100} €</td>
+    </tr>
+    `
+  }
+  //Calcule prix total panier
+  prixPanier += cameras[i].quantity * cameras[i].price / 100;
 };
+
+//j'affiche mon prix total panier
+document.getElementById('prixTotal').textContent = prixPanier 
+
+
+
+
+//je supprime une ligne 
+
+//  document.getElementById('deleteCamera') .addEventListener('click', deleteCamera)
+//  function deleteCamera(){
+// if(cameras.quantity>1){
+//   remove
+// }
+// if (cameras.quantity==1){
+// deleat
+// }
 
