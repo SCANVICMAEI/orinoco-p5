@@ -1,18 +1,16 @@
+//PANIER
+
 let container = document.getElementById("container");
 
-//je récupère les donner de mon panier que j'appele et je le traduit avec parse
-let cameras = JSON.parse(localStorage.getItem("panier")) ? JSON.parse(localStorage.getItem("panier")) : [];
+let cameras = JSON.parse(localStorage.getItem("panier")) ? JSON.parse(localStorage.getItem("panier")) : []; //je récupère les donner de mon panier que j'appele et je le traduit avec parse
 
-// je déclare en prix panier total a 0 €
-let prixPanier = 0
-
-//boucle :je parcour les lignes du panier
-for (let i = 0; i < cameras.length; i++) {
-  //bloque produit
+let prixPanier = 0 // je déclare en prix panier total a 0 €
+for (let i = 0; i < cameras.length; i++) {//boucle :je parcour les lignes du panier
+ 
   if (cameras != null) {
-    container.innerHTML +=
-          ` 
-    <tr>
+    container.innerHTML += //bloque produit
+    ` 
+    <tr> 
     <td><img src=${cameras[i].imageUrl} alt="" /></td>
     <td>${cameras[i].name}</td>
     <td>${cameras[i].price / 100} €</td>
@@ -22,24 +20,41 @@ for (let i = 0; i < cameras.length; i++) {
     </tr>
     `
   }
-  //Calcule prix total panier
-  prixPanier += cameras[i].quantity * cameras[i].price / 100;
-};
 
-//j'affiche mon prix total panier
-document.getElementById('prixTotal').textContent = prixPanier 
+  prixPanier += cameras[i].quantity * cameras[i].price / 100; //Calcule prix total panier
+  document.getElementById('prixTotal').textContent =  prixPanier + " € "; //j'affiche mon prix total panier
+
+}
+
+let supprimer = document.getElementById('deleteCamera') //fonction supprimer 1 quantité
+supprimer.addEventListener('click', function()
+{
+  if (cameras.quantity > 1) {
+    cameras.quantity--;
+  } else {
+   cameras.splice();
+  }
+
+});
+
+
+let viderPanier = document.getElementById('viderPanier') //fonction supprimer tous le panier
+viderPanier.addEventListener('click', function()
+{
+  if (panier != null) {
+    localStorage.clear();
+  } else {
+   alert('Votre panier est déja vide')
+  }
+  
+});
 
 
 
 
-//je supprime une ligne 
 
-//  document.getElementById('deleteCamera') .addEventListener('click', deleteCamera)
-//  function deleteCamera(){
-// if(cameras.quantity>1){
-//   remove
-// }
-// if (cameras.quantity==1){
-// deleat
-// }
+//FORMULAIRE
+
+
+
 

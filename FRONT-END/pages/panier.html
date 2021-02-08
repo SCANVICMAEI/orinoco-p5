@@ -48,35 +48,51 @@
         <td></td>
         <td></td>
         <td></td>
-        <td></td>
-        <td id="prixTotal"></td>
+        <td>TOTAL</td>
+         <td id="prixTotal"></td>
       </tfoot>
       <tr>
       <tr>
 
 
     </table>
+
+    <button id="viderPanier" class="viderPanier">Vider tous le Panier </button>
   </section>
 
-  <form action="#" method="#">
+  <form action="#" method="POST">
+    <div>
+      <input type="radio" id="Mr" name="drone" value="Mr"
+             checked>
+      <label for="choix">Mr</label>
+    
+      <input type="radio" id="Mme" name="drone" value="Mme">
+      <label for="choix">Mme</label>
+    </div>
+
     <div>
       <label for="name">Nom *:</label><br />
-      <input type="text" id="name" name="user_name" required="required" maxlength="" placeholder="Léo" />
+      <input type="text"pattern="" id="nom" name="user_name" required="required" maxlength="10" placeholder="Léo" />
     </div>
 
     <div>
       <label for="name">Prenom *:</label><br />
-      <input type="text" id="name" name="user_name" required="required" placeholder="Martin" />
+      <input type="text" id="prenom" name="user_name" required="required" placeholder="Martin" />
     </div>
 
     <div>
       <label for="name">Adresse *:</label><br />
-      <input type="text" id="name" name="user_name" required="required" placeholder="3 rue des cerises" />
+      <input type="text" id="adresse" name="user_name" required="required" placeholder="3 rue des cerises" />
     </div>
 
     <div>
       <label for="name">Ville *:</label><br />
-      <input type="text" id="name" name="user_name" required="required" placeholder=" Nice 06100" />
+      <input type="text" id="ville" name="user_name" required="required" placeholder=" Nice 06100" />
+    </div>
+
+    <div>
+      <label for="name">Telephone</label><br />
+      <input type="tel" id="tel" name="user_name" required="required" placeholder="06" />
     </div>
 
     <div>
@@ -84,7 +100,7 @@
       <input type="email" id="mail" name="user_mail" required="required" placeholder="martinleo@yahoo.fr" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" />
     </div>
 
-    <a class="boutton" href="confirmation.html">Commander </a>
+    <button class="confirmation" href="confirmation.html">Commander </button>
     <p>* Champ Obligatoire</p>
   </form>
 

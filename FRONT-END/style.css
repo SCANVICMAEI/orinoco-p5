@@ -7,8 +7,8 @@
 
 }
 
-.boutton:hover {
-  color: brown;
+.confirmation:active{
+  color: black;
 }
 
 .zoom {
@@ -204,6 +204,19 @@ table {
   width: 100%;
   text-align: center;
 }
+
+.viderPanier, .confirmation{
+  margin-top: 2rem;
+  background-color: dimgray;
+  color:white;
+  border-color: white;
+}
+
+
+.viderPanier:active{
+  color: black;
+}
+
 
 /* Page comfirmation*/
 
