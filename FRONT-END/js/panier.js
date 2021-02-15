@@ -5,6 +5,8 @@ let container = document.getElementById("container");
 //Recuperation du panier en localstorage
 let cameras = JSON.parse(localStorage.getItem("panier")) ? JSON.parse(localStorage.getItem("panier")) : [];
 
+// inistialise le total a
+let prixPanier = 0
 
 
 // Fonction Boucle elements du panier 
@@ -36,8 +38,14 @@ for (let i = 0; i < cameras.length; i++) {
     window.location.reload(); 
   });
 
+ //Calcule prix total panier
+  function afficherPrixPanier(){ 
+    prixPanier += cameras[i].quantity * cameras[i].price / 100; 
+  }
 }
 
+//j'affiche mon prix total panier
+document.getElementById('prixTotal').textContent =  prixPanier + " € "; 
 
 //fonction  supprimer le panier
 let viderPanier = document.getElementById('viderPanier') 
@@ -50,25 +58,11 @@ viderPanier.addEventListener('click', function(){
   }
 });
 
-// inistialise le total a
-let prixPanier = 0
 
- //j'affiche mon prix total panier
- document.getElementById('prixTotal').textContent =  prixPanier + " € "; 
-
- //Calcule prix total panier
- function afficherPrixPanier(){ 
-  prixPanier += cameras[i].quantity * cameras[i].price / 100; 
-}
-
-
-
-//FORMULAIRE
-
+// FORMULAIRE
 
 // let envoiFormulaire = document.getElementById("envoiFormulaire");
 // envoiFormulaire.addEventListener('click',function(){
-
 
 // })
 
@@ -81,14 +75,11 @@ let prixPanier = 0
 //   body : JSON.stringify(valide)
 // })  
 
-// // .then(response => response.json())   
-// //     .then(response => {
-// //       localStorage.clear();
 
 // let contact = {
 //   nom = document.getElementById("nom").value,
-//   prenom = document.getElementById('prenom').value,
-//   adresse = document.getElementById('adresse').value,
+//   prenom = document.getElementById("prenom").value,
+//   adresse = document.getElementById("adresse").value,
 //   ville = document.getElementById("ville").value,
 //   email = document.getElementById("email").value,
 // };

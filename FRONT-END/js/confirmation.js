@@ -1,3 +1,3 @@
 
 
-// document.getElementById('comfirmation')
+// document.getElementById('comfirmation'
