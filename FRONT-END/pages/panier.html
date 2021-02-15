@@ -72,35 +72,31 @@
 
     <div>
       <label for="name">Nom *:</label><br />
-      <input type="text"pattern="" id="nom" name="user_name" required="required" maxlength="10" placeholder="Léo" />
+      <input type="text" id="nom" name="nom" required="required" maxlength="10" placeholder="Léo" />
     </div>
 
     <div>
       <label for="name">Prenom *:</label><br />
-      <input type="text" id="prenom" name="user_name" required="required" placeholder="Martin" />
+      <input type="text" id="prenom" name="prenom" required="required" placeholder="Martin" />
     </div>
 
     <div>
       <label for="name">Adresse *:</label><br />
-      <input type="text" id="adresse" name="user_name" required="required" placeholder="3 rue des cerises" />
+      <input type="text" id="adresse" name="adresse" required="required" placeholder="3 rue des cerises" />
     </div>
 
     <div>
       <label for="name">Ville *:</label><br />
-      <input type="text" id="ville" name="user_name" required="required" placeholder=" Nice 06100" />
-    </div>
-
-    <div>
-      <label for="name">Telephone</label><br />
-      <input type="tel" id="tel" name="user_name" required="required" placeholder="06" />
+      <input type="text" id="ville" name="ville" required="required" placeholder=" Nice 06100" />
     </div>
 
     <div>
       <label for="mail">E-mail *:</label><br />
-      <input type="email" id="mail" name="user_mail" required="required" placeholder="martinleo@yahoo.fr" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" />
+      <input type="email" id="email" name="email" required="required" placeholder="martinleo@yahoo.fr" pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" />
     </div>
 
-    <button class="confirmation" href="confirmation.html">Commander </button>
+    <input  type="submit" value = "Commander" id="envoiFormulaire" />
+
     <p>* Champ Obligatoire</p>
   </form>
 
