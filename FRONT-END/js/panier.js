@@ -64,7 +64,10 @@ viderPanier.addEventListener('click', function () {
 });
 
 
+
 // FORMULAIRE
+let envoiFormulaire = document.getElementById("envoiFormulaire");
+
 envoiFormulaire.addEventListener('click', function (event) {
   let form = document.getElementById("form");
   event.preventDefault();
