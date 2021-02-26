@@ -44,7 +44,7 @@ function display(camera) {
   // les option lentilles s'affcihe en fonction du produit
   for (let lenses of camera.lenses) { 
     document.getElementById('option').innerHTML += `<option value="${lenses}">${lenses}</option>`;
-  }
+  };
 
   // je récupere l'élement de mon html  et écoute l'évenement au click
   document.getElementById('panier').addEventListener('click', function () {
@@ -67,7 +67,7 @@ function display(camera) {
       if (product.id === camera.id) {
         cameraExistIndex = i;
       }
-    }
+    };
 
     // Caméra existe dans le panier
     if (false !== cameraExistIndex) { 
@@ -75,7 +75,7 @@ function display(camera) {
     } else {
 
       panier.push(camera);
-    }
+    };
     // je traduit et enregistre sur le localstorage "panier"
     localStorage.setItem('panier', JSON.stringify(panier)); 
   }

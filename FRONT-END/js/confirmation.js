@@ -1,7 +1,7 @@
 //récuperation des données de l'URL
 let paramsUrl = new URL(window.location).searchParams;
 
-let orderId = paramsUrl.get("orderId")
+let orderId = paramsUrl.get("orderId");
 
 //récuperation des données contact
 let contact = JSON.parse(localStorage.getItem("contact"));

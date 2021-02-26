@@ -46,7 +46,7 @@ document.querySelectorAll(".deleteCamera").forEach(delBtn => {
     localStorage.setItem('panier', JSON.stringify(cameras));
     window.location.reload();
   })
-})
+});
 
 //j'affiche mon prix total panier et je l'evoie dans le localstorage
 let prixTotal = document.getElementById('prixTotal').textContent = prixPanier + " € ";
@@ -76,7 +76,7 @@ envoiFormulaire.addEventListener('click', function (event) {
       'address': document.getElementById("adresse").value,
       'city': document.getElementById("ville").value,
       'email': document.getElementById("email").value
-    }
+    };
 
     let products = id;
 
