@@ -23,11 +23,8 @@ cameras.forEach((camera, i) => {
   `;
   prixPanier += camera.quantity * camera.price / 100;
 
-
   for (let i = 0; i < camera.quantity; i++) {
-
     id.push(camera.id);
-
   }
 
 });
@@ -45,9 +42,10 @@ document.querySelectorAll(".deleteCamera").forEach(delBtn => {
   })
 })
 
-//j'affiche mon prix total panier
-document.getElementById('prixTotal').textContent = prixPanier + " € ";
-// localStorage.setItem('prixPanier',JSON.stringify)
+//j'affiche mon prix total panier et je l'evoie dans le localstorage
+let prixTotal = document.getElementById('prixTotal').textContent = prixPanier + " € ";
+localStorage.setItem('prixTotal', JSON.stringify(prixTotal))
+
 
 //fonction  supprimer le panier
 let viderPanier = document.getElementById('viderPanier')
@@ -56,9 +54,7 @@ viderPanier.addEventListener('click', function () {
     container.remove();
     localStorage.clear();
     window.location.reload();
-   
   }
- 
 });
 
 
@@ -83,7 +79,7 @@ envoiFormulaire.addEventListener('click', function (event) {
       contact,
       products,
     });
-
+    
     // envoie des donnees 
     fetch('http://localhost:3000/api/cameras/order', {
         method: 'POST',
@@ -100,13 +96,15 @@ envoiFormulaire.addEventListener('click', function (event) {
 
       })
       .then(function (r) {
-          localStorage.setItem("contact", JSON.stringify(r.contact + r.products));
-          window.location.assign("confirmation.html?orderId =" + r.orderId)
-      
+        console.log(r.contact+r.products)
+       
+        localStorage.setItem("contact", JSON.stringify(r.contact ));
+        window.location.assign("confirmation.html?orderId=" + r.orderId)
       })
       .catch(function (err) {
         console.log('problème api');
       })
+     
   }
-
+ 
 })
