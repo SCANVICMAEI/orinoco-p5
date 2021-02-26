@@ -1,19 +1,22 @@
-// PANIER
+//PANIER
 
-
-//Recuperation du panier en localstorage
+//Recupération du panier dans le  localstorage
 let cameras = JSON.parse(localStorage.getItem("panier")) ? JSON.parse(localStorage.getItem("panier")) : [];
 
-
+// Emplacement du html 
 let container = document.getElementById("container");
 
 // inistialise le total a
 let prixPanier = 0
+
+//récupere les id produits
 let id = [];
+
+//boucle sur le panier
 cameras.forEach((camera, i) => {
   container.innerHTML += `
       <tr>
-          <td><img src=${camera.imageUrl} alt="" /></td>
+          <td class="srcimage"><img src=${camera.imageUrl} alt="" /></td>
           <td>${camera.name}</td>
           <td>${camera.price / 100} €</td>
           <td>${camera.quantity}</td>
@@ -21,14 +24,17 @@ cameras.forEach((camera, i) => {
           <td >${camera.quantity * camera.price / 100} €</td>
       </tr>
   `;
+
+ //calcul prix Total
   prixPanier += camera.quantity * camera.price / 100;
 
+ // incremente 
   for (let i = 0; i < camera.quantity; i++) {
     id.push(camera.id);
   }
-
 });
 
+// fonction supprimer produit du paner
 document.querySelectorAll(".deleteCamera").forEach(delBtn => {
   delBtn.addEventListener('click', function () {
     let camera = cameras[delBtn.dataset.id];
@@ -47,7 +53,7 @@ let prixTotal = document.getElementById('prixTotal').textContent = prixPanier + 
 localStorage.setItem('prixTotal', JSON.stringify(prixTotal))
 
 
-//fonction  supprimer le panier
+//fonction  supprimer tout les produits du panier
 let viderPanier = document.getElementById('viderPanier')
 viderPanier.addEventListener('click', function () {
   if (cameras == null) {} else {
@@ -59,7 +65,6 @@ viderPanier.addEventListener('click', function () {
 
 
 // FORMULAIRE
-
 envoiFormulaire.addEventListener('click', function (event) {
   let form = document.getElementById("form");
   event.preventDefault();
@@ -79,32 +84,25 @@ envoiFormulaire.addEventListener('click', function (event) {
       contact,
       products,
     });
-    
+
     // envoie des donnees 
     fetch('http://localhost:3000/api/cameras/order', {
-        method: 'POST',
-        headers: {
-          'content-type': "application/json"
-        },
-        mode: "cors",
-        body: formulaireClient
-      })
-
-      .then(function (response) {
-
-        return response.json()
-
-      })
-      .then(function (r) {
-        console.log(r.contact+r.products)
-       
-        localStorage.setItem("contact", JSON.stringify(r.contact ));
-        window.location.assign("confirmation.html?orderId=" + r.orderId)
-      })
-      .catch(function (err) {
-        console.log('problème api');
-      })
-     
+      method: 'POST',
+      headers: {
+        'content-type': "application/json"
+      },
+      mode: "cors",
+      body: formulaireClient
+    })
+    .then(function (response) {
+      return response.json()
+    })
+    .then(function (r) {
+      localStorage.setItem("contact", JSON.stringify(r.contact));
+      window.location.assign("confirmation.html?orderId=" + r.orderId)
+    })
+    .catch(function (err) {
+      console.log('problème API');
+    })
   }
- 
-})
+});

@@ -15,9 +15,6 @@ h1 {
   text-align: center !important;
 }
 
-td img {
-  width: 5rem !important;
-}
 
 .appareil {
   flex-direction: column;
@@ -29,3 +26,11 @@ td img {
   border-top-right-radius: 10px;
 }
 
+td, th{
+  font-size: 0.6rem;
+  height: 4rem !important;
+}
+
+.srcimage{
+  display: none;
+}
