@@ -25,7 +25,6 @@ fetch("http://localhost:3000/api/cameras")
 // prend 1 rpoduits de la liste produit
         for (let product of listeProduct) {
             let camera = new Camera(product)
-
             display(camera);
         }
     });
