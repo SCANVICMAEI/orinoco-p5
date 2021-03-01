@@ -35,6 +35,11 @@ const display = camera => {
       </div>
     </div>
   `;
+  // CHOIX OPTIONS
+  for (let lenses of camera.lenses){
+    document.getElementById('option').innerHTML+=
+    `<option value="1">${lenses}</option>`
+  }
   // ECOUTE EVENEMENT AU CLICK + FNCT addProductBasket
   document.getElementById('panier').addEventListener('click', function () {
     addProductBasket(camera)

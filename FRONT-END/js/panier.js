@@ -113,7 +113,7 @@ envoiFormulaire.addEventListener('click', function (event) {
       });
   }
   else{
-    alert("Attention votre panier est vide !")
+    alert(" Une erreur est survenue votre panier est  peux étre vide ou le formulaire n'a pas été correctement rempli!")
   };
   
 });
