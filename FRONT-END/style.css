@@ -118,7 +118,7 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 
-span {
+.bloqueDescription {
   color: black;
   display: flex;
   flex-direction: row;
