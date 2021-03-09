@@ -41,18 +41,20 @@ cameras.forEach((camera, i) => {
   }
 });
 
-// SUPPRIMER 1 PRODUIT DU PANIER
-document.querySelectorAll(".deleteCamera").forEach(delBtn => {
-  delBtn.addEventListener('click', function () {
-    let camera = cameras[delBtn.dataset.id];
+function deleteCamera(id) {
+    let camera = cameras[id];
     if (camera.quantity > 1) {
       camera.quantity--;
     } else {
-      cameras.splice(delBtn.dataset.id, 1);
+      cameras.splice(id, 1);
     }
     localStorage.setItem('panier', JSON.stringify(cameras));
     window.location.reload();
-  })
+  }
+
+// SUPPRIMER 1 PRODUIT DU PANIER
+document.querySelectorAll(".deleteCamera").forEach(delBtn => {
+  delBtn.addEventListener('click', () => deleteCamera(delBtn.dataset.id))
 });
 
 let viderPanier = document.getElementById('viderPanier')
@@ -69,12 +71,9 @@ function deleteBasket() {
 };
 
 //// GESTION DU FORMULAIRE ////
-let envoiFormulaire = document.getElementById("envoiFormulaire");
 
-envoiFormulaire.addEventListener('click', function (event) {
+function sendOrder() {
   let form = document.getElementById("form");
-  event.preventDefault();
-
   if (form.reportValidity() == true && addIdBasket.length>0) {
     let contact = {
       'firstName': document.getElementById("nom").value,
@@ -115,5 +114,11 @@ envoiFormulaire.addEventListener('click', function (event) {
   else{
     alert(" Une erreur est survenue votre panier est  peux étre vide ou le formulaire n'a pas été correctement rempli!")
   };
-  
+}
+
+let envoiFormulaire = document.getElementById("envoiFormulaire");
+
+envoiFormulaire.addEventListener('click', function (event) {
+  event.preventDefault();
+  sendOrder();
 });

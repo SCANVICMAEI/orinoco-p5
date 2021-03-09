@@ -45,16 +45,16 @@
         </tr>
       </thead>
       <tfoot>
+        <tr>
         <td></td>
         <td></td>
         <td></td>
         <td></td>
         <td>TOTAL</td>
         <td id="prixTotal"></td>
+      </tr>
       </tfoot>
-      <tr>
-      <tr>
-
+      
     </table>
 
     <button id="viderPanier" class="viderPanier">Vider tous le Panier </button>
@@ -63,35 +63,35 @@
   <form action="#" method="POST" id="form">
     <div>
       <input type="radio" id="Mr" name="drone" value="Mr" checked>
-      <label for="choix">Mr</label>
+      <label for="Mr">Mr</label>
 
       <input type="radio" id="Mme" name="drone" value="Mme">
-      <label for="choix">Mme</label>
+      <label for="Mme">Mme</label>
     </div>
 
     <div>
-      <label for="name">Nom *:</label><br />
+      <label for="nom">Nom *:</label><br />
       <input type="text" id="nom" name="nom" required="required" placeholder="Leo" />
     </div>
 
     <div>
-      <label for="name">Prenom *:</label><br />
+      <label for="prenom">Prenom *:</label><br />
       <input type="text" id="prenom" name="prenom" required="required" placeholder="Martin" />
     </div>
 
     <div>
-      <label for="name">Adresse *:</label><br />
+      <label for="adresse">Adresse *:</label><br />
       <input type="text" id="adresse" name="adresse" required="required" placeholder="3 rue des cerises" />
     </div>
 
     <div>
-      <label for="text">Ville *:</label><br />
-      <input type="text" id="ville" name="ville" required="required" placeholder=" Nice "
+      <label for="ville">Ville *:</label><br />
+      <input type="text" id="ville" name="text" required="required" placeholder=" Nice "
         pattern="^[a-zA-Z]{1}[a-zA-Z'À-ÿ -]+$" />
     </div>
 
     <div>
-      <label for="mail">E-mail *:</label><br />
+      <label for="email">E-mail *:</label><br />
       <input type="email" id="email" name="email" required="required" placeholder="martin@yahoo.fr"
         pattern="[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+.[a-zA-Z.]{2,15}" />
     </div>

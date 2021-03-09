@@ -26,11 +26,18 @@ h1 {
   border-top-right-radius: 10px;
 }
 
-td, th{
+td,
+th {
   font-size: 0.6rem;
   height: 4rem !important;
 }
 
-.srcimage{
+.srcimage {
   display: none;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  margin-left: 2rem;
 }
